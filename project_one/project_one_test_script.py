@@ -8,7 +8,7 @@ import uuid
 import string
 import sys
 
-from CRUD import AnimalShelter
+from project_one import AnimalShelter
 
 # debugging statement
 # print("The value of __name__ is:", repr(__name__))
@@ -52,9 +52,12 @@ def main(argv):
         
     # test Read functionality
     animal = animalShelter.read({"animal_id": animal_id})
-    print('Test passed for READ functionality.')
-    print('')
-
+    if animal:
+        print('Test passed for READ functionality.')
+        print('')
+    else:
+        print('Test Failed for READ functionality.')
+        print('')
     
     # test Update functionality
     keyValue = json.loads('{"name":"Ivory"}')
